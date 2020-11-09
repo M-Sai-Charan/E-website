@@ -1,0 +1,59 @@
+body{
+  background-color: #c5e1ff4d;
+}
+mat-card {
+  max-width: 800px;
+  margin: 2em auto;
+  text-align: center;
+  background-color: transparent;
+  max-height: 600px;
+}
+.signin-content {
+  padding: 60px 1rem;
+}
+.full-width-input {
+  width: 100%;
+  height: 100px;
+}
+mat-form-field{
+  margin-top:20px;
+  font-size: 20px;
+}
+input{
+  color: #000;
+
+}
+h3{
+  font-size: 25px;
+  color: #000;
+  font-family: monospace;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow:none;
+}
+.btn-block{
+  margin-top: 20px;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+  font-size: 20px;
+
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+

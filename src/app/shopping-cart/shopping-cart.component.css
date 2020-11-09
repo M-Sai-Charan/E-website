@@ -1,0 +1,42 @@
+.container{
+  margin-top: 30px;
+}
+.breadcrumb{
+  background-color: black;
+}
+a.bread{
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+a.bread:hover{
+  color: #ff7846;
+}
+.active{
+  color: #ff7846;
+  font-size: 20px;
+  background-color: black;
+  border: none;
+}
+img{
+  width: 20%;
+}
+table{
+  border:none;
+}
+thead{
+  background-color: #ff7846;
+  color: #000;
+  font-size: 25px;
+  letter-spacing: 1px;
+  font-family: monospace;
+  font-weight: 600;
+  text-align: center;
+}
+tbody{
+  color: #000;
+  letter-spacing: 1px;
+  font-family: monospace;
+  font-weight: 600;
+  text-align: center;
+}

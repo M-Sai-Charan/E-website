@@ -1,0 +1,17 @@
+.bg-light{
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+}
+.navbar-brand {
+  color: #ff7846;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.navbar-brand:hover{
+  color: #ff7846;
+}
+.nav-link{
+  color: #fff !important;
+  font-size: 20px;
+  letter-spacing: 1px;
+}

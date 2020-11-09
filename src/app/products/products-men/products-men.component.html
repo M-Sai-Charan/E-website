@@ -1,0 +1,152 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="bread" routerLink="/">Home</a></li>
+          <li class="breadcrumb-item"><a class="bread" routerLink="/products">Products</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Men</li>
+        </ol>
+    </nav>
+    </div>
+  </div>
+</div>
+
+ <div class="container-fluid" style="margin-top: 10px;">
+  <div class="row">
+    <div class="col-lg-2 items">
+      <ul class="list-group">
+        <li class="list-group-item"
+        [class.active]="viewMode == 'dress'"
+        (click)="viewMode = 'dress'">
+        <a>Dressing</a>
+        </li>
+
+        <li class="list-group-item"
+        [class.active]="viewMode == 'face'"
+        (click)="viewMode = 'face'">
+        <a >Grooming</a>
+        </li>
+
+        <li class="list-group-item"
+        [class.active]="viewMode == 'fashion'"
+        (click)="viewMode = 'fashion'">
+        <a>Fashion</a>
+        </li>
+
+        <li class="list-group-item"
+        [class.active]="viewMode == 'foot'"
+        (click)="viewMode = 'foot'">
+        <a>Footwear</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="col-lg-10">
+      <div [ngSwitch]="viewMode">
+        <div *ngSwitchCase="'dress'">
+            <div class="row">
+              <div *ngFor="let dress of dresses">
+                <div class="col-lg-12" >
+                  <div class="product-card">
+                    <!-- <div class="badge">Hot</div> -->
+                    <div class="product-tumb">
+                      <img [src]="dress.imageUrl" alt="">
+                    </div>
+                    <div class="product-details">
+                      <h4><a href="">{{dress.name}}</a></h4>
+                      <p>{{dress.description}}</p>
+                      <div class="product-bottom-details">
+                        <div class="product-price">&#8377;{{ dress.price }}</div>
+                        <div class="product-links">
+                          <button class="btn btn-outline-success" (click)="addToCart()">Add To Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+              </div>
+            </div>
+        </div>
+        <div *ngSwitchCase="'face'">
+          <div class="row">
+            <div *ngFor="let groom of grooms">
+              <div class="col-lg-12">
+                <div class="product-card">
+                  <!-- <div class="badge">Hot</div> -->
+                  <div class="product-tumb">
+                    <img [src]="groom.imageUrl" alt="">
+                  </div>
+                  <div class="product-details">
+                    <h4><a href="">{{groom.name}}</a></h4>
+                    <p>{{groom.description}}</p>
+                    <div class="product-bottom-details">
+                      <div class="product-price">&#8377;{{ groom.price }}</div>
+                      <div class="product-links">
+                        <button class="btn btn-outline-success" (click)="addToCart()">Add To Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="'fashion'">
+          <div class="row">
+            <div *ngFor="let fashion of fashions">
+              <div class="col-lg-12">
+                <div class="product-card">
+                  <!-- <div class="badge">Hot</div> -->
+                  <div class="product-tumb">
+                    <img [src]="fashion.imageUrl" alt="">
+                  </div>
+                  <div class="product-details">
+                    <h4><a href="">{{fashion.name}}</a></h4>
+                    <p>{{fashion.description}}</p>
+                    <div class="product-bottom-details">
+                      <div class="product-price">&#8377;{{ fashion.price }}</div>
+                      <div class="product-links">
+                        <button class="btn btn-outline-success" (click)="addToCart()">Add To Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchCase="'foot'">
+          <div class="row">
+            <div *ngFor="let foot of foots">
+              <div class="col-lg-12">
+                <div class="product-card">
+                  <!-- <div class="badge">Hot</div> -->
+                  <div class="product-tumb">
+                    <img [src]="foot.imageUrl" alt="">
+                  </div>
+                  <div class="product-details">
+                    <h4><a href="">{{foot.name}}</a></h4>
+                    <p>{{foot.description}}</p>
+                    <div class="product-bottom-details">
+                      <div class="product-price">&#8377;{{ foot.price }}</div>
+                      <div class="product-links">
+                        <button class="btn btn-outline-success" (click)="addToCart()" >Add To Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+        <div *ngSwitchDefault>No Products</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

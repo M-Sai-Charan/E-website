@@ -1,0 +1,52 @@
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="signin-content">
+        <mat-card>
+          <mat-card-content>
+            <form [formGroup]="loginform" (ngSubmit)="onLogin()">
+              <h3 class="text-center alert alert-primary" *ngIf="name">
+                {{'Hello' + ' ' + userName + '...!'}}</h3>
+              <mat-form-field class="full-width-input" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="userName" autocomplete="off" #box (keyup)="onKey(box.value)">
+                <mat-error  *ngIf="isFieldInvalid('userName')">
+                  <mat-error *ngIf="f.userName.errors.required">UserName is required</mat-error>
+                  <mat-error *ngIf="f.userName.errors.pattern">UserName should be in Alphabets</mat-error>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width-input" appearance="outline">
+                <mat-label>Emailaddress</mat-label>
+                <input matInput type="email" formControlName="emailAddress"  autocomplete="off">
+                <mat-error *ngIf="isFieldInvalid('emailAddress')">
+                  <mat-error *ngIf="f.emailAddress.errors.required">EmailAddress is required</mat-error>
+                  <mat-error *ngIf="f.emailAddress.errors.email">Email must be a valid email address</mat-error>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width-input" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'"  formControlName="passWord" autocomplete="off">
+                <button type="button" mat-icon-button class="btn btn-transparent forgot-password " matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                <mat-error *ngIf="isFieldInvalid('passWord')">
+                  <mat-error *ngIf="f.passWord.errors.required">Password is required</mat-error>
+                  <mat-error *ngIf="f.passWord.errors.minlength">Password must be at least 6 characters</mat-error>
+                </mat-error>
+            </mat-form-field>
+              <button class="btn btn-lg btn-block btn-info " type="submit">Login</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+
+
+
+
